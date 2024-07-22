@@ -2,6 +2,7 @@ from flask import Flask, request, render_template
 from keras.models import load_model
 from keras.preprocessing import image
 import numpy as np
+# from PIL import Image
 
 import os
 
@@ -16,6 +17,11 @@ def load_my_model(model_path):
     except OSError as e:
         print(f"Error loading model: {e}")
         return None
+
+# def convert_image_to_jpg(image_path, output_path):
+#     with Image.open(image_path) as img:
+#         rgb_img = img.convert('RGB')
+#         rgb_img.save(output_path, 'JPEG')
 
 
 def prepare_image(img_path):
